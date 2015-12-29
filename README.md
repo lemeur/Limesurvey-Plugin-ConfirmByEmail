@@ -29,7 +29,7 @@ Then set the maximum number of email templates each survey administrator will be
 
 __On each survey__
 * __Enabling the plugin on the survey__
- * go to _General Settings_, open the _Plugins_ tab
+ * on the survey administration parameters, go to _General Settings_ and open the _Plugins_ tab
  * set the number of emails template you need (the default value of `0` disables the plugin).
   * __Important__: Once updated the Survey Settings form is automatically saved, and you have to get back to the *Plugins* tab to see the new settings.
 * __Email destination__: this field is an __EM expression__ that outputs a semi-column separated list of email addresses
