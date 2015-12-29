@@ -10,7 +10,7 @@ __Shared features with the standard notification system:__
 * the `{ANSWERTABLE}` variable is recognized
 
 __Main features:__
-* multiple email templates for each survey (not limitted to the participant's notification, the basic admin notification and the advanced admin notification from the core feature)
+* multiple email templates for each survey (not limited to the participant's notification, the basic and detailed admin notification from the core feature)
 * destination email addresses can be taken from a question's answer from the response (no need for user invitation or auto-registration)
 * destination email addresses are EM expressions and thus can depend on the participant's answers (this enables email routing based on the response)
 * if the destination email addresses list (semi-column separated list) contains no valid email address, no email is sent making the confirmation conditionnal with EM expressions
