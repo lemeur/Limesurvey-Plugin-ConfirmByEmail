@@ -44,6 +44,6 @@ __On each survey__
 * __Email Subject (for each language)__: the subject of the email as an __EM expression__ enabling custom text tailoring
  * If the subject for a specific language is not set, and the email is intended to use this language, then the survey's base-language of both Subject and Content will be used.
 * __Email Content (for each language)__: the subject of the email as an __EM expression__ enabling custom text tailoring
- * In the Content you can use the `{ANSWERTABLE}` placeholder as a shortcut. Note that the response _timestamp_ will be hidden if the ssurvey is not set to _DateStamp_
+ * In the Content you can use the `{ANSWERTABLE}` placeholder as a shortcut. Note that the response _timestamp_ will be hidden if the survey is not set to _DateStamp_
  
  
