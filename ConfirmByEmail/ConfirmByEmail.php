@@ -162,10 +162,8 @@ class ConfirmByEmail extends PluginBase {
         // Retrieve response and survey properties
         $responseId = $event->get('responseId');
         $response   = $this->pluginManager->getAPI()->getResponse($surveyId, $responseId);
-        //$thatResponse = Survey::model()->findByPk($surveyId);
         $sitename = $this->pluginManager->getAPI()->getConfigKey('sitename');
         $surveyInfo = getSurveyInfo($surveyId);
-        //$thatSurvey = Survey::model()->findByPk($surveyId);
         $adminemail = $surveyInfo['adminemail'];
         $bounce_email = $surveyInfo['bounce_email'];
         $isHtmlEmail = ($surveyInfo['htmlemail']=='Y');
@@ -175,8 +173,8 @@ class ConfirmByEmail extends PluginBase {
             // Let's check if there is at least a valid destination email address
             $aTo=array();
             $aAttachTo=array();
-            $aDestEmail=explode(';',\LimeExpressionManager::ProcessString($this->get('emailDestinations_'.$i,'Survey',$surveyId)));
-            $aUploadQuestions=explode(';',\LimeExpressionManager::ProcessString($this->get('emailAttachFiles_'.$i,'Survey',$surveyId)));
+            $aDestEmail=explode(';',$this->pluginManager->getAPI()->EMevaluateExpression($this->get('emailDestinations_'.$i,'Survey',$surveyId)));
+            $aUploadQuestions=explode(';',$this->pluginManager->getAPI()->EMevaluateExpression($this->get('emailAttachFiles_'.$i,'Survey',$surveyId)));
             // prepare an array of valid destination email addresses
             foreach ($aDestEmail as $destemail) {
                 if(validateEmailAddress($destemail)) {
@@ -189,8 +187,8 @@ class ConfirmByEmail extends PluginBase {
                 $qtype='';
                 if (isset($response[$uploadQuestion])) {
                     // get SGQA code from question-code. Ther might be a better way to do this though...
-                    $sgqa  = \LimeExpressionManager::ProcessString('{'.$uploadQuestion.'.sgqa}');
-                    $qtype  = \LimeExpressionManager::ProcessString('{'.$uploadQuestion.'.type}');
+                    $sgqa  = $this->pluginManager->getAPI()->EMevaluateExpression('{'.$uploadQuestion.'.sgqa}');
+                    $qtype  = $this->pluginManager->getAPI()->EMevaluateExpression('{'.$uploadQuestion.'.type}');
                 }
                 // Only add the file if question is relevant
                 if ($sgqa != 0 && $qtype == "|" && \LimeExpressionManager::QuestionIsRelevant($sgqa)) {
@@ -201,7 +199,7 @@ class ConfirmByEmail extends PluginBase {
                                 $name = $file->name;       
                                 $filename = $file->filename;       
                                 $aAttachTo[] = Array (
-                                        0 => Yii::app()->getConfig('uploaddir')."/surveys/{$surveyId}/files/".$filename,
+                                        0 => $this->pluginManager->getAPI()->getConfigKey('uploaddir')."/surveys/{$surveyId}/files/".$filename,
                                         1 => $name
                                         );
                             }
