@@ -186,12 +186,14 @@ class ConfirmByEmail extends PluginBase {
             // prepare an array of valid attached files from upload-questions
             foreach ($aUploadQuestions as $uploadQuestion) {
                 $sgqa = 0;
+                $qtype='';
                 if (isset($response[$uploadQuestion])) {
                     // get SGQA code from question-code. Ther might be a better way to do this though...
-                    $sgqa = \LimeExpressionManager::ProcessString('{'.$uploadQuestion.'.sgqa}');
+                    $sgqa  = \LimeExpressionManager::ProcessString('{'.$uploadQuestion.'.sgqa}');
+                    $qtype  = \LimeExpressionManager::ProcessString('{'.$uploadQuestion.'.type}');
                 }
                 // Only add the file if question is relevant
-                if ($sgqa != 0 && \LimeExpressionManager::QuestionIsRelevant($sgqa)) {
+                if ($sgqa != 0 && $qtype == "|" && \LimeExpressionManager::QuestionIsRelevant($sgqa)) {
                     $aFiles=json_decode($response[$uploadQuestion]);
                     if (!is_null($aFiles) && is_array($aFiles)) {
                         foreach ($aFiles as $file) {   
