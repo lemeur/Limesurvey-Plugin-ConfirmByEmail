@@ -11,7 +11,7 @@ __Shared features with the standard notification system:__
 
 __Main features:__
 * multiple email templates for each survey (not limited to the participant's notification, the basic and detailed admin notification from the core feature)
-* destination email addresses can be taken from a question's answer from the response (no need for user invitation or auto-registration)
+* destination email addresses can be taken from the response (usable for open-surveys with no auto-registration or no allow-save enabled)
 * destination email addresses are EM expressions and thus can depend on the participant's answers (this enables email routing based on the response)
 * if the destination email addresses list (semi-column separated list) contains no valid email address, no email is sent making the confirmation conditionnal with EM expressions
 * it is possible to attach some files from file-upload questions. As it is setup using an EM expression, all kind of logic is supported to select which file to upload and in which context.
