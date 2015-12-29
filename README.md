@@ -32,7 +32,7 @@ __On each survey__
  * on the survey administration parameters, go to _General Settings_ and open the _Plugins_ tab
  * set the number of emails template you need (the default value of `0` disables the plugin).
   * __Important__: Once updated the Survey Settings form is automatically saved, and you have to get back to the *Plugins* tab to see the new settings.
-* __Email destination__: this field is an __EM expression__ that outputs a semi-column separated list of email addresses
+* __Email destination__: this field is an __EM expression__ that results in a semi-column separated list of email addresses
  * example 1: you just want to send the email to _foo@bar.org_ and _john@doe.com_, then just type in `foo@bar.com;john@doe.com` 
  * example 2: if you have 2 questions with codes persoEmail and proEmail, then you can type `{proEmail};{persoEmail}`
  * you can of course use complex EM expressions making the resulting list conditionned to answers
