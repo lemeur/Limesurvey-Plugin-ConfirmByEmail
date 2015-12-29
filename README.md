@@ -28,9 +28,10 @@ __On the plateform__
 Then set the maximum number of email templates each survey administrator will be able to manage.
 
 __On each survey__
-* Go to _General Settings_, open the _Plugins_ tab
- * In order to enable the plugin for this survey, you have to set the number of emails template to set (the default value of `0` disables the plugin).
- * __Important__: Once updated the Survey Settings form is automatically saved, and you have to get back to the *Plugins* tab to see the new settings.
+* __Enabling the plugin on the survey__
+ * go to _General Settings_, open the _Plugins_ tab
+ * set the number of emails template you need (the default value of `0` disables the plugin).
+  * __Important__: Once updated the Survey Settings form is automatically saved, and you have to get back to the *Plugins* tab to see the new settings.
 * __Email destination__: this field is an __EM expression__ that outputs a semi-column separated list of email addresses
  * example 1: you just want to send the email to _foo@bar.org_ and _john@doo.com_, then just type in `foo@bar.com;john@doo.com` 
  * example 2: if you have 2 questions with codes persoEmail and proEmail, then you can type `{proEmail};{persoEmail}`
