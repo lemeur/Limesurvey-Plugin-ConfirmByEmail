@@ -7,7 +7,7 @@ This new Email notification plugin will send confirmation emails when a response
 __Shared features with the standard notification system:__
 * several destination emails can be given for a single template
 * the templates are localized (a template is proposed for each survey supported language)
-* the `{ANSWERTABLE}` variable is recognized (the datestamp is removed from the output if the survey is not datestampped)
+* the `{ANSWERTABLE}` variable is recognized
 
 __Main features:__
 * multiple email templates for each survey (not limitted to the participant's notification, the basic admin notification and the advanced admin notification from the core feature)
