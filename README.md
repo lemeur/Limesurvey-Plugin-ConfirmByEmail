@@ -8,12 +8,12 @@ __Shared features with the standard notification system:__
 * several destination emails can be given for a single template
 * the templates are localized (a template is proposed for each survey supported language)
 * the `{ANSWERTABLE}` variable is recognized
-
-__Main features:__
-* multiple email templates for each survey (not limited to the participant's notification, the basic and detailed admin notification from the core feature)
-* destination email addresses can be taken from the response (usable for open-surveys with no auto-registration or no allow-save enabled)
 * destination email addresses are EM expressions and thus can depend on the participant's answers (this enables email routing based on the response)
+* destination email addresses can be taken from the response (usable for open-surveys with no auto-registration or no allow-save enabled)
 * if the destination email addresses list (semi-column separated list) contains no valid email address, no email is sent. This makes it possible to add relevance conditions to confirmation emails. 
+ 
+__Main new features:__
+* multiple email templates for each survey (not limited to the participant's notification, the basic and detailed admin notification from the core feature)
 * it is possible to attach some files from file-upload questions. As it is setup using an EM expression, conditions are supported to select which file to upload or not.
 
 __Not implemented in this plugin:__
