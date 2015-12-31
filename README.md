@@ -1,6 +1,8 @@
 # Limesurvey-Plugin-ConfirmByEmail
 This LimeSurvey Plugin is an extended version of the onSubmit notification feature of LimeSurvey
 
+This plugin works on LimeSurvey v2.06+ (from Build 151109)
+
 ##Main features
 This new Email notification plugin will send confirmation emails when a response is submitted.
 
