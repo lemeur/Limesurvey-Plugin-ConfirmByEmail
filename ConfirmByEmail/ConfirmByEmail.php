@@ -57,7 +57,12 @@ class ConfirmByEmail extends PluginBase {
         $surveyId   = $event->get('survey');
         $surveyInfo = getSurveyInfo($surveyId);
         $baselang   = $surveyInfo['language'];
-        $isHtmlEmail = ($surveyInfo['htmlemail']=='Y');
+        // surveyInfo['htmlemail'] is set in the TOKEN section and thus
+        // seems little relevant to notification/confirmation emails
+        // for now let's set it to HTML only as this would probably be the
+        // most usual setting
+        //$isHtmlEmail = ($surveyInfo['htmlemail']=='Y');
+        $isHtmlEmail = TRUE;
         $aLangs = array();
         $aLangs[] = $baselang;
         $otherLangs = explode(" ",$surveyInfo['additional_languages']);
