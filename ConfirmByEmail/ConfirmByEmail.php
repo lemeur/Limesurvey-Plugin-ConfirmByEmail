@@ -174,7 +174,9 @@ class ConfirmByEmail extends PluginBase {
             $aTo=array();
             $aAttachTo=array();
             $aDestEmail=explode(';',$this->pluginManager->getAPI()->EMevaluateExpression($this->get('emailDestinations_'.$i,'Survey',$surveyId)));
+            $aDestEmail = array_map('trim',$aDestEmail);
             $aUploadQuestions=explode(';',$this->pluginManager->getAPI()->EMevaluateExpression($this->get('emailAttachFiles_'.$i,'Survey',$surveyId)));
+            $aUploadQuestions = array_map('trim',$aUploadQuestions);
             // prepare an array of valid destination email addresses
             foreach ($aDestEmail as $destemail) {
                 if(validateEmailAddress($destemail)) {
